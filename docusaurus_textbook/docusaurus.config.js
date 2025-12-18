@@ -7,7 +7,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://physicalhumanoidaitextbook.vercel.app',
+  url: 'https://textbookie-jade.vercel.app/',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -57,12 +57,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/ph-ai-logo.png',
+      image: 'img/ph-ai-logo.jpg',
       navbar: {
         title: 'Physical AI & Humanoid Robotics TB',
         logo: {
           alt: 'My Site Logo',
-          src: 'img/ph-ai-logo.png',
+          src: 'img/ph-ai-logo.jpg',
         },
         items: [
           {
@@ -131,13 +131,18 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright � ${new Date().getFullYear()} Physical AI & Humanoid Robotics TB`,
+        copyright: `Copyright © ${new Date().getFullYear()} Physical AI & Humanoid Robotics TB`,
       },
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
     }),
+
+  customFields: {
+    backendUrl: process.env.BACKEND_URL || 'http://localhost:8000',
+  },
 };
 
 export default config;
+

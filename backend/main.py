@@ -35,7 +35,7 @@ class DocusaurusEmbeddingPipeline:
             self.qdrant_client = QdrantClient(url=qdrant_url)
 
         # Target URL for the Docusaurus site
-        self.target_url = "https://hackathon-physical-ai-humanoid-text-sigma.vercel.app/"
+        self.target_url = "https://textbookie-jade.vercel.app/"
 
     def get_all_urls(self, base_url: str) -> List[str]:
         """

@@ -1,14 +1,15 @@
 import os
 import asyncio
+from dotenv import load_dotenv
+
+# Load environment variables FIRST before other imports
+load_dotenv()
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional, Dict
-from dotenv import load_dotenv
 import logging
-
-# Load environment variables
-load_dotenv()
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

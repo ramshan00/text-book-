@@ -7,10 +7,10 @@ export default {
   "title": "Physical AI & Humanoid Robotics Textbook",
   "tagline": "Learning Physical AI and Robotics",
   "favicon": "img/favicon.ico",
-  "url": "https://physicalhumanoidaitextbook.vercel.app",
+  "url": "https://textbookie-jade.vercel.app",
   "baseUrl": "/",
-  "organizationName": "subhankaladi",
-  "projectName": "physical-ai-humanoid-robotics-textbook",
+  "organizationName": "ramshan00",
+  "projectName": "physical-ai-humanoid-robotics-tb",
   "deploymentBranch": "gh-pages",
   "onBrokenLinks": "throw",
   "i18n": {
@@ -41,12 +41,12 @@ export default {
     ]
   ],
   "themeConfig": {
-    "image": "img/ph-ai-logo.png",
+    "image": "img/ph-ai-logo.jpg",
     "navbar": {
-      "title": "Physical AI & Humanoid Robotics Textbook",
+      "title": "Physical AI & Humanoid Robotics TB",
       "logo": {
         "alt": "My Site Logo",
-        "src": "img/ph-ai-logo.png"
+        "src": "img/ph-ai-logo.jpg"
       },
       "items": [
         {
@@ -56,7 +56,7 @@ export default {
           "label": "Textbook"
         },
         {
-          "href": "https://github.com/subhankaladi",
+          "href": "https://github.com/ramshan00",
           "label": "GitHub",
           "position": "right"
         },
@@ -99,15 +99,15 @@ export default {
           "items": [
             {
               "label": "Instagram",
-              "href": "https://instagram.com/subhan_kaladi"
+              "href": "https://instagram.com"
             },
             {
               "label": "LinkenIN",
-              "href": "https://www.linkedin.com/in/subhankaladi/"
+              "href": "https://www.linkedin.com"
             },
             {
               "label": "(X)Twitter",
-              "href": "https://x.com/subhankaladi15"
+              "href": "https://x.com"
             }
           ]
         },
@@ -116,12 +116,12 @@ export default {
           "items": [
             {
               "label": "GitHub",
-              "href": "https://github.com/subhankaladi"
+              "href": "https://github.com"
             }
           ]
         }
       ],
-      "copyright": "Copyright � 2025 Physical AI & Humanoid Robotics Textbook, Built with ❤️ by Subhan Kaladi."
+      "copyright": "Copyright © 2025 Physical AI & Humanoid Robotics TB"
     },
     "prism": {
       "theme": {
@@ -350,6 +350,9 @@ export default {
       "maxHeadingLevel": 3
     }
   },
+  "customFields": {
+    "backendUrl": "http://localhost:8000"
+  },
   "baseUrlIssueBanner": true,
   "future": {
     "v4": {
@@ -377,7 +380,6 @@ export default {
   "staticDirectories": [
     "static"
   ],
-  "customFields": {},
   "plugins": [],
   "themes": [],
   "scripts": [],

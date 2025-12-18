@@ -14,7 +14,7 @@
       "calendar": "gregory",
       "path": "en",
       "translate": false,
-      "url": "https://physicalhumanoidaitextbook.vercel.app",
+      "url": "https://textbookie-jade.vercel.app",
       "baseUrl": "/"
     },
     "ur": {
@@ -24,7 +24,7 @@
       "calendar": "gregory",
       "path": "ur",
       "translate": true,
-      "url": "https://physicalhumanoidaitextbook.vercel.app",
+      "url": "https://textbookie-jade.vercel.app",
       "baseUrl": "/ur/"
     }
   }

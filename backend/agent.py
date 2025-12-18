@@ -3,19 +3,23 @@ import json
 import logging
 from typing import Dict, List, Any
 from dotenv import load_dotenv
-from agents import Agent, Runner
-from agents import function_tool
-import asyncio
 import time
 
-# Load environment variables
+# Load environment variables FIRST before other imports
 load_dotenv()
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-@function_tool
+# Import Hugging Face
+try:
+    from huggingface_hub import InferenceClient
+    logger.info("Hugging Face Hub imported successfully")
+except ImportError:
+    logger.error("huggingface_hub not installed. Run: pip install huggingface_hub")
+    raise
+
 def retrieve_information(query: str) -> Dict:
     """
     Retrieve information from the knowledge base based on a query
@@ -54,14 +58,50 @@ def retrieve_information(query: str) -> Dict:
 
 class RAGAgent:
     def __init__(self):
-        # Create the agent with retrieval tool using the new OpenAI Agents SDK
-        self.agent = Agent(
-            name="RAG Assistant",
-            instructions="You are a helpful assistant that answers questions based on retrieved documents. When asked a question, retrieve relevant documents first using the retrieve_information tool, then answer based on them. Always cite your sources and provide the information that was used to generate the answer.",
-            tools=[retrieve_information]
-        )
+        # Get Hugging Face configuration
+        self.hf_token = os.getenv("HUGGINGFACE_API_KEY")
+        self.model = os.getenv("HUGGINGFACE_MODEL", "HuggingFaceH4/zephyr-7b-beta")
+        
+        if not self.hf_token:
+            logger.error("HUGGINGFACE_API_KEY not set in environment variables")
+            raise ValueError("HUGGINGFACE_API_KEY is required")
+        
+        logger.info(f"HUGGINGFACE_API_KEY is set (starts with {self.hf_token[:7]}...)")
+        
+        # Initialize Hugging Face Inference Client
+        self.client = InferenceClient(token=self.hf_token)
+        
+        logger.info(f"RAG Agent initialized with Hugging Face model: {self.model}")
 
-        logger.info("RAG Agent initialized with OpenAI Agents SDK")
+    def _build_prompt(self, query: str, retrieved_chunks: List[Dict]) -> str:
+        """
+        Build a prompt with system instructions, retrieved context, and user query
+        """
+        # System instructions
+        prompt = """You are a helpful AI assistant that answers questions based on retrieved documents about Physical AI and Humanoid Robotics.
+
+"""
+        
+        # Add retrieved context
+        if retrieved_chunks and len(retrieved_chunks) > 0:
+            prompt += "Context from knowledge base:\n\n"
+            for i, chunk in enumerate(retrieved_chunks, 1):
+                prompt += f"[Source {i} - {chunk['url']}]\n"
+                prompt += f"{chunk['content']}\n\n"
+            
+            prompt += f"User Question: {query}\n\n"
+            prompt += "Instructions: Answer the question based on the provided context above. "
+            prompt += "If the context contains relevant information, use it to provide a detailed answer. "
+            prompt += "Always mention which sources you used. "
+            prompt += "If the context doesn't contain enough information, say so honestly.\n\n"
+            prompt += "Answer:"
+        else:
+            prompt += f"User Question: {query}\n\n"
+            prompt += "Note: No relevant documents were found in the knowledge base. "
+            prompt += "Please provide a general answer or indicate that you don't have specific information.\n\n"
+            prompt += "Answer:"
+        
+        return prompt
 
     def query_agent(self, query_text: str) -> Dict:
         """
@@ -72,83 +112,66 @@ class RAGAgent:
         logger.info(f"Processing query through RAG agent: '{query_text[:50]}...'")
 
         try:
-            # Run the agent with the query using the new OpenAI Agents SDK
-            # Since Runner.run is async, we need to run it in an event loop
-            import asyncio
-            if asyncio.get_event_loop().is_running():
-                # If we're already in an event loop, we need to use a different approach
-                import concurrent.futures
-                with concurrent.futures.ThreadPoolExecutor() as executor:
-                    future = executor.submit(asyncio.run, self._async_query_agent(query_text))
-                    result = future.result()
-            else:
-                result = asyncio.run(self._async_query_agent(query_text))
+            # Step 1: Retrieve relevant documents
+            retrieval_result = retrieve_information(query_text)
+            retrieved_chunks = retrieval_result.get('retrieved_chunks', [])
+            
+            logger.info(f"Retrieved {len(retrieved_chunks)} chunks from knowledge base")
 
+            # Step 2: Build prompt with context
+            prompt = self._build_prompt(query_text, retrieved_chunks)
+            
+            logger.info(f"Built prompt with {len(retrieved_chunks)} context chunks")
+
+            # Step 3: Call Hugging Face model using chat_completion
+            logger.info(f"Calling Hugging Face model: {self.model}")
+            
+            # Format as chat messages for better compatibility
+            messages = [{"role": "user", "content": prompt}]
+            
+            response = self.client.chat_completion(
+                messages=messages,
+                model=self.model,
+                max_tokens=512,
+                temperature=0.7,
+                top_p=0.95
+            )
+            
+            # Extract the response text
+            answer = response.choices[0].message.content
+            
+            logger.info(f"Received response from Hugging Face")
+
+            # Step 4: Extract sources
+            sources = list(set([chunk['url'] for chunk in retrieved_chunks]))
+            
+            # Step 5: Calculate query time
+            query_time_ms = (time.time() - start_time) * 1000
+
+            # Step 6: Format response
+            result = {
+                "answer": answer.strip(),
+                "sources": sources,
+                "matched_chunks": retrieved_chunks,
+                "query_time_ms": query_time_ms,
+                "confidence": self._calculate_confidence(retrieved_chunks)
+            }
+
+            logger.info(f"Query processed in {query_time_ms:.2f}ms")
             return result
 
         except Exception as e:
             logger.error(f"Error processing query: {e}")
+            import traceback
+            traceback.print_exc()
+            
             return {
-                "answer": "Sorry, I encountered an error processing your request.",
+                "answer": f"Sorry, I encountered an error: {str(e)}",
                 "sources": [],
                 "matched_chunks": [],
                 "error": str(e),
                 "query_time_ms": (time.time() - start_time) * 1000
             }
-
-    async def _async_query_agent(self, query_text: str) -> Dict:
-        """
-        Internal async method to run the agent query
-        """
-        start_time = time.time()
-
-        try:
-            result = await Runner.run(self.agent, query_text)
-
-            # Extract the assistant's response
-            assistant_response = result.final_output
-
-            if not assistant_response:
-                return {
-                    "answer": "Sorry, I couldn't generate a response.",
-                    "sources": [],
-                    "matched_chunks": [],
-                    "error": "No response from assistant",
-                    "query_time_ms": (time.time() - start_time) * 1000
-                }
-
-            # Extract sources and matched chunks from the tool calls
-            sources = set()
-            matched_chunks = []
-
-            # The new SDK might store tool call results differently
-            # Let's try to access them in the most likely way based on the documentation
-            if hasattr(result, 'final_output') and result.final_output:
-                # If the result contains tool call results in final_output
-                # For now, we'll rely on the agent's processing of the tool results
-                # The agent itself will incorporate the tool results into the final response
-                pass
-
-            # Calculate query time
-            query_time_ms = (time.time() - start_time) * 1000
-
-            # Format the response
-            # For the new SDK, we may need to extract the sources and chunks differently
-            # based on how the agent processes the tool results
-            response = {
-                "answer": str(assistant_response),
-                "sources": list(sources),
-                "matched_chunks": matched_chunks,
-                "query_time_ms": query_time_ms,
-                "confidence": self._calculate_confidence(matched_chunks)
-            }
-
-            logger.info(f"Query processed in {query_time_ms:.2f}ms")
-            return response
-
-        except Exception as e:
-            logger.error(f"Error in async query: {e}")
-            raise
 
     def _calculate_confidence(self, matched_chunks: List[Dict]) -> str:
         """
@@ -173,28 +196,6 @@ def query_agent(query_text: str) -> Dict:
     agent = RAGAgent()
     return agent.query_agent(query_text)
 
-def run_agent_sync(query_text: str) -> Dict:
-    """
-    Synchronous function to run the agent for direct usage
-    """
-    import asyncio
-
-    async def run_async():
-        agent = RAGAgent()
-        return await agent._async_query_agent(query_text)
-
-    # Check if there's already a running event loop
-    try:
-        loop = asyncio.get_running_loop()
-        # If there's already a loop, run in a separate thread
-        import concurrent.futures
-        with concurrent.futures.ThreadPoolExecutor() as executor:
-            future = executor.submit(asyncio.run, run_async())
-            return future.result()
-    except RuntimeError:
-        # No running loop, safe to use asyncio.run
-        return asyncio.run(run_async())
-
 def main():
     """
     Main function to demonstrate the RAG agent functionality
@@ -207,43 +208,20 @@ def main():
     # Example queries to test the system
     test_queries = [
         "What is ROS2?",
-        "Explain humanoid design principles",
-        "How does VLA work?",
-        "What are simulation techniques?",
-        "Explain AI control systems"
     ]
 
-    print("RAG Agent - Testing Queries")
-    print("=" * 50)
-
     for i, query in enumerate(test_queries, 1):
-        print(f"\nQuery {i}: {query}")
-        print("-" * 30)
-
+        print(f"\n{'='*60}")
+        print(f"Query {i}: {query}")
+        print('='*60)
+        
         # Process query through agent
         response = agent.query_agent(query)
-
-        # Print formatted results
-        print(f"Answer: {response['answer']}")
-
-        if response.get('sources'):
-            print(f"Sources: {len(response['sources'])} documents")
-            for source in response['sources'][:3]:  # Show first 3 sources
-                print(f"  - {source}")
-
-        if response.get('matched_chunks'):
-            print(f"Matched chunks: {len(response['matched_chunks'])}")
-            for j, chunk in enumerate(response['matched_chunks'][:2], 1):  # Show first 2 chunks
-                content_preview = chunk['content'][:100] + "..." if len(chunk['content']) > 100 else chunk['content']
-                print(f"  Chunk {j}: {content_preview}")
-                print(f"    Source: {chunk['url']}")
-                print(f"    Score: {chunk['similarity_score']:.3f}")
-
+        
+        print(f"\nAnswer: {response['answer']}")
+        print(f"\nSources: {', '.join(response['sources'])}")
         print(f"Query time: {response['query_time_ms']:.2f}ms")
-        print(f"Confidence: {response.get('confidence', 'unknown')}")
-
-        if i < len(test_queries):  # Don't sleep after the last query
-            time.sleep(1)  # Small delay between queries
+        print(f"Confidence: {response['confidence']}")
 
 if __name__ == "__main__":
     main()
