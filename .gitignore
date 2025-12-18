@@ -1,10 +1,9 @@
 node_modules
 .env
 .env.local
+.env.example
 
 # Qdrant local storage (DO NOT COMMIT)
 backend/qdrant/storage/
 backend/qdrant/snapshots/
 
-# Env files
-backend/.env
