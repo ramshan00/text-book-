@@ -1,0 +1,27 @@
+{
+  "id": "simulation/gazebo-unity",
+  "title": "Gazebo & Unity Integration",
+  "description": "Using Gazebo for physics and Unity for high-quality rendering (static guidance)",
+  "source": "@site/docs/03-simulation/gazebo-unity.md",
+  "sourceDirName": "03-simulation",
+  "slug": "/simulation/gazebo-unity",
+  "permalink": "/docs/simulation/gazebo-unity",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/03-simulation/gazebo-unity.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Gazebo & Unity Integration",
+    "description": "Using Gazebo for physics and Unity for high-quality rendering (static guidance)"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Digital Twins",
+    "permalink": "/docs/simulation/digital-twins"
+  },
+  "next": {
+    "title": "Module 2: Simulation & Digital Twins",
+    "permalink": "/docs/simulation/module-2-simulation"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "appendix/glossary",
+  "title": "Glossary",
+  "description": "Key terms used throughout the textbook",
+  "source": "@site/docs/appendix/glossary.md",
+  "sourceDirName": "appendix",
+  "slug": "/appendix/glossary",
+  "permalink": "/docs/appendix/glossary",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/appendix/glossary.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Glossary",
+    "description": "Key terms used throughout the textbook"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 6: Designing Humanoid Robots",
+    "permalink": "/docs/humanoid-design/module-6-humanoid-design"
+  },
+  "next": {
+    "title": "References",
+    "permalink": "/docs/appendix/references"
+  }
+}

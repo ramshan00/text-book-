@@ -1,0 +1,23 @@
+{
+  "id": "introduction/intro",
+  "title": "Physical AI & Humanoid Robotics Textbook",
+  "description": "A Docusaurus-powered curriculum for Physical AI, ROS 2, simulation, VLA systems and humanoid robotics",
+  "source": "@site/docs/01-introduction/intro.md",
+  "sourceDirName": "01-introduction",
+  "slug": "/introduction/intro",
+  "permalink": "/docs/introduction/intro",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/01-introduction/intro.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Physical AI & Humanoid Robotics Textbook",
+    "description": "A Docusaurus-powered curriculum for Physical AI, ROS 2, simulation, VLA systems and humanoid robotics"
+  },
+  "sidebar": "tutorialSidebar",
+  "next": {
+    "title": "Module 1: The Robotic Nervous System - ROS 2",
+    "permalink": "/docs/ros2-foundations/module-1-ros2"
+  }
+}

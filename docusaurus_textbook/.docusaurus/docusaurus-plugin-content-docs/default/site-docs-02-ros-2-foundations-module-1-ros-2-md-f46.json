@@ -1,0 +1,36 @@
+{
+  "id": "ros2-foundations/module-1-ros2",
+  "title": "Module 1: The Robotic Nervous System - ROS 2",
+  "description": "Mastering the middleware that makes modern humanoid robots think and move",
+  "source": "@site/docs/02-ros2-foundations/module-1-ros2.md",
+  "sourceDirName": "02-ros2-foundations",
+  "slug": "/ros2-foundations/module-1-ros2",
+  "permalink": "/docs/ros2-foundations/module-1-ros2",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/02-ros2-foundations/module-1-ros2.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Module 1: The Robotic Nervous System - ROS 2",
+    "description": "Mastering the middleware that makes modern humanoid robots think and move",
+    "module": 1,
+    "duration": "6-8 hours",
+    "prerequisites": "Python basics, Linux command line",
+    "objectives": [
+      "Understand why ROS 2 is the de-facto robotic operating system",
+      "Master nodes, topics, services, and actions conceptually",
+      "Learn how AI agents map to ROS 2 concepts",
+      "Model any humanoid robot using URDF/Xacro (conceptual guidance)"
+    ]
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Physical AI & Humanoid Robotics Textbook",
+    "permalink": "/docs/introduction/intro"
+  },
+  "next": {
+    "title": "ROS 2 Core Concepts",
+    "permalink": "/docs/ros2-foundations/ros2-hands-on"
+  }
+}

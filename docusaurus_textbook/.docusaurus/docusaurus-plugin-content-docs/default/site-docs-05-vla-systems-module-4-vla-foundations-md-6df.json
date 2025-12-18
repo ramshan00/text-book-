@@ -1,0 +1,37 @@
+{
+  "id": "vla-systems/module-4-vla-foundations",
+  "title": "Module 4: Vision-Language-Action (VLA) Systems - Foundations",
+  "description": "Empowering humanoids to perceive, understand, and interact with the world through multimodal AI",
+  "source": "@site/docs/05-vla-systems/module-4-vla-foundations.md",
+  "sourceDirName": "05-vla-systems",
+  "slug": "/vla-systems/module-4-vla-foundations",
+  "permalink": "/docs/vla-systems/module-4-vla-foundations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/05-vla-systems/module-4-vla-foundations.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Module 4: Vision-Language-Action (VLA) Systems - Foundations",
+    "description": "Empowering humanoids to perceive, understand, and interact with the world through multimodal AI",
+    "module": 4,
+    "duration": "6-8 hours",
+    "prerequisites": "ROS 2, basic AI/ML concepts, Python",
+    "objectives": [
+      "Understand the architecture and components of VLA systems for robotics",
+      "Explore key AI models for visual perception, natural language understanding, and action generation",
+      "Integrate multimodal sensors (cameras, microphones) with VLA pipelines (conceptual)",
+      "Develop basic VLA behaviors for simulated humanoid robots (design only)",
+      "Grasp the ethical considerations and challenges in VLA development"
+    ]
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 3: Hardware Foundations & Edge AI",
+    "permalink": "/docs/hardware-basics/module-3-hardware"
+  },
+  "next": {
+    "title": "VLA Action Systems",
+    "permalink": "/docs/vla-systems/vla-action"
+  }
+}

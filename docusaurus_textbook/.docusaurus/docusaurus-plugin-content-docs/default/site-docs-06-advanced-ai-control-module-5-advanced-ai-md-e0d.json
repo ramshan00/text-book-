@@ -1,0 +1,35 @@
+{
+  "id": "advanced-ai-control/module-5-advanced-ai",
+  "title": "Module 5: Advanced AI & Control",
+  "description": "RL, sim-to-real, model-based control, and subagent architectures",
+  "source": "@site/docs/06-advanced-ai-control/module-5-advanced-ai.md",
+  "sourceDirName": "06-advanced-ai-control",
+  "slug": "/advanced-ai-control/module-5-advanced-ai",
+  "permalink": "/docs/advanced-ai-control/module-5-advanced-ai",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/06-advanced-ai-control/module-5-advanced-ai.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Module 5: Advanced AI & Control",
+    "description": "RL, sim-to-real, model-based control, and subagent architectures",
+    "module": 5,
+    "duration": "8-12 hours",
+    "prerequisites": "Simulation, ROS 2, Python",
+    "objectives": [
+      "Understand reinforcement learning for robotics (conceptual)",
+      "Plan sim-to-real transfer and domain randomization",
+      "Design hierarchical controllers and agent skill libraries"
+    ]
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "VLA Vision Systems",
+    "permalink": "/docs/vla-systems/vla-vision"
+  },
+  "next": {
+    "title": "Module 6: Designing Humanoid Robots",
+    "permalink": "/docs/humanoid-design/module-6-humanoid-design"
+  }
+}

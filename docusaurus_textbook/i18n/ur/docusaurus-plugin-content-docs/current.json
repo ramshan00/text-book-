@@ -1,0 +1,38 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.introduction": {
+    "message": "introduction",
+    "description": "The label for category 'introduction' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.ros2-foundations": {
+    "message": "ros2-foundations",
+    "description": "The label for category 'ros2-foundations' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.simulation": {
+    "message": "simulation",
+    "description": "The label for category 'simulation' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.hardware-basics": {
+    "message": "hardware-basics",
+    "description": "The label for category 'hardware-basics' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.vla-systems": {
+    "message": "vla-systems",
+    "description": "The label for category 'vla-systems' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.advanced-ai-control": {
+    "message": "advanced-ai-control",
+    "description": "The label for category 'advanced-ai-control' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.humanoid-design": {
+    "message": "humanoid-design",
+    "description": "The label for category 'humanoid-design' in sidebar 'tutorialSidebar'"
+  },
+  "sidebar.tutorialSidebar.category.appendix": {
+    "message": "appendix",
+    "description": "The label for category 'appendix' in sidebar 'tutorialSidebar'"
+  }
+}

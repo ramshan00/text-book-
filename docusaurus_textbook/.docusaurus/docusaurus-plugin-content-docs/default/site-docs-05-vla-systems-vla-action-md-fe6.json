@@ -1,0 +1,27 @@
+{
+  "id": "vla-systems/vla-action",
+  "title": "VLA Action Systems",
+  "description": "Motion planning, IK, RL, task planning (design-level guidance)",
+  "source": "@site/docs/05-vla-systems/vla-action.md",
+  "sourceDirName": "05-vla-systems",
+  "slug": "/vla-systems/vla-action",
+  "permalink": "/docs/vla-systems/vla-action",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/05-vla-systems/vla-action.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "VLA Action Systems",
+    "description": "Motion planning, IK, RL, task planning (design-level guidance)"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Module 4: Vision-Language-Action (VLA) Systems - Foundations",
+    "permalink": "/docs/vla-systems/module-4-vla-foundations"
+  },
+  "next": {
+    "title": "Hands-On: Basic VLA Agent (Design Only)",
+    "permalink": "/docs/vla-systems/vla-hands-on-basic"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "id": "vla-systems/vla-language",
+  "title": "VLA Language Systems",
+  "description": "LLMs, instruction following, reasoning (static guidance)",
+  "source": "@site/docs/05-vla-systems/vla-language.md",
+  "sourceDirName": "05-vla-systems",
+  "slug": "/vla-systems/vla-language",
+  "permalink": "/docs/vla-systems/vla-language",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/05-vla-systems/vla-language.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "VLA Language Systems",
+    "description": "LLMs, instruction following, reasoning (static guidance)"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Hands-On: Basic VLA Agent (Design Only)",
+    "permalink": "/docs/vla-systems/vla-hands-on-basic"
+  },
+  "next": {
+    "title": "VLA Vision Systems",
+    "permalink": "/docs/vla-systems/vla-vision"
+  }
+}

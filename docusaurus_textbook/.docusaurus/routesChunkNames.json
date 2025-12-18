@@ -1,0 +1,137 @@
+{
+  "/__docusaurus/debug-5ff": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/config-5ba": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/content-a2b": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    },
+    "__props": "__props---docusaurus-debug-content-3-c-0-be2"
+  },
+  "/__docusaurus/debug/globalData-c3c": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/metadata-156": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/registry-88c": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/routes-000": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/docs-0e0": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---docsaba-d7c"
+    }
+  },
+  "/docs-69f": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---docs-005-788"
+  },
+  "/docs-fd4": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
+  },
+  "/docs/advanced-ai-control/module-5-advanced-ai-e09": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-advanced-ai-control-module-5-advanced-aie-0-d-f15"
+  },
+  "/docs/appendix/glossary-16e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-appendix-glossary-888-494"
+  },
+  "/docs/appendix/references-bd3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-appendix-references-2-e-8-0cd"
+  },
+  "/docs/appendix/resources-84e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-appendix-resourcesc-30-d3d"
+  },
+  "/docs/hardware-basics/module-3-hardware-822": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-hardware-basics-module-3-hardwarec-82-50c"
+  },
+  "/docs/humanoid-design/module-6-humanoid-design-6be": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-humanoid-design-module-6-humanoid-designeeb-d41"
+  },
+  "/docs/intro-61d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-intro-0-e-3-be1"
+  },
+  "/docs/introduction/intro-61f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-introduction-intro-825-826"
+  },
+  "/docs/ros2-foundations/module-1-ros2-dc0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-ros-2-foundations-module-1-ros-2-f-46-e73"
+  },
+  "/docs/ros2-foundations/ros2-hands-on-6fd": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-ros-2-foundations-ros-2-hands-on-5-e-4-55e"
+  },
+  "/docs/simulation/digital-twins-2dd": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-simulation-digital-twins-349-c42"
+  },
+  "/docs/simulation/gazebo-unity-47c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-simulation-gazebo-unity-7-f-0-766"
+  },
+  "/docs/simulation/module-2-simulation-224": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-simulation-module-2-simulation-677-4c8"
+  },
+  "/docs/vla-systems/module-4-vla-foundations-685": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-vla-systems-module-4-vla-foundations-6-df-07c"
+  },
+  "/docs/vla-systems/vla-action-b08": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-vla-systems-vla-actionfe-6-52d"
+  },
+  "/docs/vla-systems/vla-hands-on-basic-21c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-vla-systems-vla-hands-on-basicccc-0ed"
+  },
+  "/docs/vla-systems/vla-language-8c1": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-vla-systems-vla-language-4-f-4-764"
+  },
+  "/docs/vla-systems/vla-vision-596": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-vla-systems-vla-vision-4-df-a4c"
+  },
+  "/-2e1": {
+    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
+    "__context": {
+      "plugin": "plugin---a-74-9d6"
+    },
+    "config": "config---5-e-9-4f3"
+  }
+}

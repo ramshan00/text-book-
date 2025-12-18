@@ -1,0 +1,118 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "introduction/intro",
+          "docs": [
+            {
+              "id": "advanced-ai-control/module-5-advanced-ai",
+              "path": "/docs/advanced-ai-control/module-5-advanced-ai",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "appendix/glossary",
+              "path": "/docs/appendix/glossary",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "appendix/references",
+              "path": "/docs/appendix/references",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "appendix/resources",
+              "path": "/docs/appendix/resources",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "hardware-basics/module-3-hardware",
+              "path": "/docs/hardware-basics/module-3-hardware",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "humanoid-design/module-6-humanoid-design",
+              "path": "/docs/humanoid-design/module-6-humanoid-design",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "intro",
+              "path": "/docs/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "introduction/intro",
+              "path": "/docs/introduction/intro",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "ros2-foundations/module-1-ros2",
+              "path": "/docs/ros2-foundations/module-1-ros2",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "ros2-foundations/ros2-hands-on",
+              "path": "/docs/ros2-foundations/ros2-hands-on",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "simulation/digital-twins",
+              "path": "/docs/simulation/digital-twins",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "simulation/gazebo-unity",
+              "path": "/docs/simulation/gazebo-unity",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "simulation/module-2-simulation",
+              "path": "/docs/simulation/module-2-simulation",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "vla-systems/module-4-vla-foundations",
+              "path": "/docs/vla-systems/module-4-vla-foundations",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "vla-systems/vla-action",
+              "path": "/docs/vla-systems/vla-action",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "vla-systems/vla-hands-on-basic",
+              "path": "/docs/vla-systems/vla-hands-on-basic",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "vla-systems/vla-language",
+              "path": "/docs/vla-systems/vla-language",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "vla-systems/vla-vision",
+              "path": "/docs/vla-systems/vla-vision",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/docs/introduction/intro",
+                "label": "introduction/intro"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}
