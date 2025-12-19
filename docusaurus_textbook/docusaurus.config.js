@@ -2,9 +2,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Physical AI & Humanoid Robotics Textbook',
-  tagline: 'Learning Physical AI and Robotics',
-  favicon: 'img/favicon.ico',
+  title: 'Humanoid Book',
+  tagline: 'Where AI Becomes Alive',
 
   // Set the production url of your site here
   url: 'https://textbookie-jade.vercel.app/',

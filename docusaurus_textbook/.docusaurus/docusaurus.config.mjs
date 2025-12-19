@@ -4,9 +4,8 @@
  * Modify the docusaurus.config.js file at your site's root instead.
  */
 export default {
-  "title": "Physical AI & Humanoid Robotics Textbook",
-  "tagline": "Learning Physical AI and Robotics",
-  "favicon": "img/favicon.ico",
+  "title": "Humanoid Book",
+  "tagline": "Where AI Becomes Alive",
   "url": "https://textbookie-jade.vercel.app",
   "baseUrl": "/",
   "organizationName": "ramshan00",

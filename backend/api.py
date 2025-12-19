@@ -104,7 +104,7 @@ async def ask_rag(request: QueryRequest):
                 for chunk in response.get("matched_chunks", [])
             ],
             error=response.get("error"),
-            status="error" if response.get("error") else "success",
+            status=response.get("status", "error"),
             query_time_ms=response.get("query_time_ms"),
             confidence=response.get("confidence")
         )

@@ -6,3 +6,5 @@ python-dotenv>=1.0.0
 fastapi>=0.100.0
 uvicorn>=0.22.0
 huggingface_hub>=0.20.0
+transformers
+torch

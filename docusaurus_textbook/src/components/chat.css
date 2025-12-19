@@ -132,3 +132,42 @@
   cursor: pointer;
   margin-left: -1px;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .chat-container {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .chat-button {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  /* When open, make chat box full screen minus varying margins */
+  .chat-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    left: 20px;
+    top: 20px;
+    width: auto;
+    height: auto;
+    max-height: none; /* Override the fixed height */
+    z-index: 10001; /* Ensure it's on top */
+  }
+
+  .chat-header {
+    padding: 1rem;
+  }
+  
+  .chat-header h3 {
+    font-size: 0.85rem;
+  }
+  
+  .chat-input {
+    padding: 1rem;
+  }
+}

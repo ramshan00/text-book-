@@ -24,10 +24,12 @@ class RAGRetriever:
         qdrant_url = os.getenv("QDRANT_URL", "http://localhost:6333")
         qdrant_api_key = os.getenv("QDRANT_API_KEY")
 
-        if qdrant_api_key:
+        if qdrant_api_key and "localhost" not in qdrant_url:
             self.qdrant_client = QdrantClient(url=qdrant_url, api_key=qdrant_api_key)
         else:
-            self.qdrant_client = QdrantClient(url=qdrant_url)
+            # Fallback to local disk storage if URL is localhost or missing key
+            logger.info("Using local Qdrant storage at ./qdrant_data")
+            self.qdrant_client = QdrantClient(path="./qdrant_data")
 
         # Default collection name
         self.collection_name = "rag_embedding"

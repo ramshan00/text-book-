@@ -10,7 +10,8 @@ const ChatWidget = () => {
   ]);
   const [loading, setLoading] = useState(false);
 
-  const backendUrl = "http://localhost:8000";
+  // Hugging Face deployment URL
+  const backendUrl = "https://ramsha00-bookramshy.hf.space";
 
   const handleSend = async () => {
     if (!query.trim()) return;
@@ -21,7 +22,10 @@ const ChatWidget = () => {
     setLoading(true);
 
     try {
+      // Send query to Hugging Face space
       const response = await axios.post(`${backendUrl}/ask`, { query });
+      
+      // Update messages with bot response
       setMessages([...newMessages, { role: "bot", content: response.data.answer }]);
     } catch (error) {
       setMessages([
